@@ -1,0 +1,16 @@
+
+LocaWeb – www.zafetyapp.com.br (Redirecionar para o www.zafety.com.br)
+Login
+Login: jpzamith
+Senha: Z@f3tyapp
+
+FTP
+host: ftp.zafetyapp.com ||  ftp.zafetyapp1.hospedagemdesites.ws
+user: zafetyapp1 
+pass: K4rpWZUR(zep#K
+
+MYSQL
+host:
+bd: zafety
+user: 
+pass: K4rpWZUR(zep#K
