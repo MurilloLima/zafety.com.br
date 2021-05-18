@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEquipametosTable extends Migration
+class CreateMeetingTopicsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateEquipametosTable extends Migration
      */
     public function up()
     {
-        Schema::create('equipametos', function (Blueprint $table) {
+        Schema::create('meeting_topics', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateEquipametosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipametos');
+        Schema::dropIfExists('meeting_topics');
     }
 }

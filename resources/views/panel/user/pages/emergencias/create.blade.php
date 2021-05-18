@@ -24,9 +24,9 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     @include('panel.includes.alerts')
-                    <div class="card card-info">
+                    <div class="card card-red">
                         <div class="card-header border-0">
                             <div class="d-flex justify-content-between">
                                 <h3 class="card-title">Cadastro de equipamentos</h3>
@@ -39,7 +39,7 @@
                                     @include('panel.user.pages.emergencias._form.form')
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                                    <button type="submit" class="btn btn-default">Confirmar</button>
                                 </div>
                                 {!! Form::close() !!}
                             </div>

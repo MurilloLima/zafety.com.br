@@ -43,7 +43,7 @@
                         <div class="card-body">
                             {!! Form::open(['route'=>'user.reuniao.search']) !!}
                             @include('panel.user.pages.hse._form.search')
-                            <button class="btn btn-info"><i class="fas fa-Comment"></i> Enviar</button>
+                            <button class="btn btn-default"><i class="fas fa-Comment"></i> Enviar</button>
                             {!! Form::close() !!}
                         </div>
                     </div>

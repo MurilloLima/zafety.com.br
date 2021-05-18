@@ -27,8 +27,8 @@
                     @include('panel.includes.alerts')
                     <div class="row">
                         <div class="col-md-12 text-right" style="margin-bottom: 10px;">
-                            <a href="{{ route('user.reuniao.create') }}" class="btn btn-info">
-                                Nova Reunião
+                            <a href="{{ route('user.reuniao.create') }}" class="btn btn-default">
+                                Adicionar
                             </a>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                         <div class="card-body">
                             {!! Form::open(['route'=>'user.reuniao.search']) !!}
                             @include('panel.user.pages.reuniao._form.search')
-                            <button class="btn btn-info"><i class="fa fa-search"></i> Pesquisar</button>
+                            <button class="btn btn-default"><i class="fa fa-search"></i> Pesquisar</button>
                             {!! Form::close() !!}
                         </div>
                     </div>

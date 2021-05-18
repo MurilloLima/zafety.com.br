@@ -23,10 +23,10 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-6">
                     <a href="{{ route('user.hse.index') }}">
                         <div class="info-box">
-                            <span class="info-box-icon bg-info elevation-1">
+                            <span class="info-box-icon bg-success elevation-1">
                                 <i class="fas fa-user-friends"></i>
                             </span>
 
@@ -41,9 +41,9 @@
                     <!-- /.info-box -->
                 </div>
                 <!-- /.col -->
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-6">
                     <a href="{{ route('user.rh.index') }}">
-                        <div class="info-box mb-3">
+                        <div class="info-box mb-6">
                             <span class="info-box-icon bg-danger elevation-1">
                                 <i class="fas fa-address-card"></i>
                             </span>
@@ -61,10 +61,10 @@
                 <!-- fix for small devices only -->
                 <div class="clearfix hidden-md-up"></div>
 
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-6">
                    <a href="{{ route('user.qualidade.index') }}">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success elevation-1">
+                    <div class="info-box mb-6">
+                        <span class="info-box-icon bg-orange elevation-1">
                             <i class="fas fa-chart-line"></i>
                         </span>
 
@@ -77,10 +77,10 @@
                     <!-- /.info-box -->
                 </div>
                 <!-- /.col -->
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-6">
                     <a href="{{ route('user.producao.index') }}">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1">
+                        <div class="info-box mb-6">
+                            <span class="info-box-icon bg-info elevation-1">
                                 <i class="fas fa-tools"></i>
                             </span>
     

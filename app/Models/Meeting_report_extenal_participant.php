@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Equipameto extends Model
+class Meeting_report_extenal_participant extends Model
 {
     //
 }

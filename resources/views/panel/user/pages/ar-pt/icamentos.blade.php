@@ -24,9 +24,9 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     @include('panel.includes.alerts')
-                    <div class="card card-info">
+                    <div class="card card-orange">
                         <div class="card-header border-0">
                             <div class="d-flex justify-content-between">
                                 <h3 class="card-title">Içamentos</h3>

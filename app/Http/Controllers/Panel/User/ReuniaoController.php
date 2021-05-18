@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Panel\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Meeting;
+use App\Models\Meeting_report;
 
 class ReuniaoController extends Controller
 {
@@ -15,7 +16,7 @@ class ReuniaoController extends Controller
      */
     public function index()
     {
-        $data = Meeting::orderby('created_at', 'desc')->paginate(50);
+        $data = Meeting_report::orderby('created_at', 'desc')->paginate(50);
         return view('panel.user.pages.reuniao.index', compact('data'));
     }
 

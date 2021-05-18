@@ -2701,6 +2701,19 @@ fieldset:disabled a.btn {
   border-color: #117a8b;
 }
 
+.btn-yellow {
+  color: #ffffff;
+  background-color: #ffc107;
+  border-color: #f7c531e7;
+  box-shadow: none;
+}
+
+.btn-yellow:hover {
+  color: #ffffff;
+  background-color: #dfa806;
+  border-color: #dfa806;
+}
+
 .btn-info:focus, .btn-info.focus {
   color: #ffffff;
   background-color: #138496;

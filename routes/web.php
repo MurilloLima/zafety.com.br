@@ -100,7 +100,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::get('nao-conformidade/search/', 'Panel\User\NcController@search')->name('user.nc.search');
 
     //Ocorrencias
-    Route::get('ocorrencias/', 'Panel\User\OcorrenciaController@index')->name('user.ocorrencias.index');
+    Route::get('ocorrencia/', 'Panel\User\OcorrenciaController@index')->name('user.ocorrencias.index');
     Route::get('ocorrencia/create/', 'Panel\User\OcorrenciaController@create')->name('user.ocorrencia.create');
     Route::post('ocorrencia/', 'Panel\User\OcorrenciaController@store')->name('user.ocorrencia.store');
     Route::get('ocorrencia/edit/{id}', 'Panel\User\OcorrenciaController@edit')->name('user.inspecao.edit');
@@ -109,7 +109,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::get('ocorrencias/search/', 'Panel\User\OcorrenciaController@search')->name('user.ocorrencias.search');
 
     //Emergencias
-    Route::get('emergencias/', 'Panel\User\EmergenciaController@index')->name('user.emergencias.index');
+    Route::get('emergencia/', 'Panel\User\EmergenciaController@index')->name('user.emergencias.index');
     Route::get('emergencia/create/', 'Panel\User\EmergenciaController@create')->name('user.emergencia.create');
     Route::post('emergencia/', 'Panel\User\EmergenciaController@store')->name('user.emergencia.store');
     Route::get('emergencia/edit/{id}', 'Panel\User\EmergenciaController@edit')->name('user.emergencia.edit');

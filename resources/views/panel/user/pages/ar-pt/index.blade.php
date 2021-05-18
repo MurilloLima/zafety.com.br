@@ -25,7 +25,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="{{ route('user.ar-pt.analise_risco') }}">
-                        <div class="info-box bg-warning">
+                        <div class="info-box bg-orange">
                             <span class="info-box-icon"><i class="fa fa-search"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Análise de risco</span>
@@ -35,12 +35,9 @@
                     </a>
                     <!-- /.info-box -->
                 </div>
-            </div>
-            <div class="row justify-content-center">
-
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="{{ route('user.ar-pt.trabalho_altura') }}">
-                        <div class="info-box bg-warning">
+                        <div class="info-box bg-orange">
                             <span class="info-box-icon"><i class="fas fa-people-carry"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Trabalho em altura</span>
@@ -52,7 +49,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="{{ route('user.ar-pt.servico_quente') }}">
-                        <div class="info-box bg-warning">
+                        <div class="info-box bg-orange">
                             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Serviço a quente</span>
@@ -64,7 +61,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="{{ route('user.ar-pt.espaco_confinado') }}">
-                        <div class="info-box bg-warning">
+                        <div class="info-box bg-orange">
                             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Espaços confinado</span>
@@ -78,7 +75,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="{{ route('user.ar-pt.icamento') }}">
-                        <div class="info-box bg-warning">
+                        <div class="info-box bg-orange">
                             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Içamentos</span>
@@ -90,7 +87,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="{{ route('user.ar-pt.eletrica') }}">
-                        <div class="info-box bg-warning">
+                        <div class="info-box bg-orange">
                             <span class="info-box-icon"><i class="fas fa-charging-station"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Eletrica</span>
@@ -102,7 +99,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="{{ route('user.ar-pt.escavacao') }}">
-                        <div class="info-box bg-warning">
+                        <div class="info-box bg-orange">
                             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Escavação</span>

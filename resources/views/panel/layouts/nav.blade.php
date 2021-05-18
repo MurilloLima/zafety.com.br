@@ -36,7 +36,7 @@
 <!-- /.navbar -->
 
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar elevation-4 sidebar-light-navy">
+<aside class="main-sidebar elevation-4 {{$class}}">
     <!-- Brand Logo -->
     <a href="{{ route('admin.index') }}" class="brand-link">
         <img src="{{ asset('icon.png') }}" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -127,7 +127,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('user.ocorrencias.index') }}"
-                        class="nav-link {{ $activePage == 'user.ocorrencias.index' ? ' active' : '' }}">
+                        class="nav-link {{ $activePage == 'user.ocorrencia.index' ? ' active' : '' }}">
                         <i class="nav-icon fas fa-headset"></i>
                         <p>
                             Ocorrências
@@ -136,7 +136,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('user.emergencias.index') }}"
-                        class="nav-link {{ $activePage == 'user.emergencias.index' ? ' active' : '' }}">
+                        class="nav-link {{ $activePage == 'user.emergencia.index' ? ' active' : '' }}">
                         <i class="nav-icon fas fa-ambulance"></i>
                         <p>
                             Emergências

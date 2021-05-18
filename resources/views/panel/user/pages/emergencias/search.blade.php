@@ -1,4 +1,4 @@
-@extends('panel.layouts.app' ,['activePage' => 'user.ocorrencias.index'])
+@extends('panel.layouts.app' ,['activePage' => 'user.emergencia.index'])
 @section('title', 'Pesquisar')
 
 @section('content')
@@ -27,7 +27,7 @@
                     @include('panel.includes.alerts')
                     <div class="row">
                         <div class="col-md-12 text-right" style="margin-bottom: 10px;">
-                            <a href="{{ route('user.reuniao.create') }}" class="btn btn-info">
+                            <a href="{{ route('user.reuniao.create') }}" class="btn btn-default">
                                 Nova Pesquisar
                             </a>
                         </div>
@@ -36,7 +36,7 @@
                         <div class="card-body">
                             {!! Form::open(['route'=>'user.ocorrencias.search']) !!}
                             @include('panel.user.pages.emergencias._form.search')
-                            <button class="btn btn-info"><i class="fa fa-search"></i> Pesquisar</button>
+                            <button class="btn btn-default"><i class="fa fa-search"></i> Pesquisar</button>
                             {!! Form::close() !!}
                         </div>
                     </div>
@@ -46,7 +46,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-sm-12">
-                    <div class="card card-info card-tabs">
+                    <div class="card card-red card-tabs">
                         <div class="card-header p-0 pt-1">
                             <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
                                 <li class="nav-item">

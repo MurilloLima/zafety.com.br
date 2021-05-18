@@ -1,4 +1,4 @@
-@extends('panel.layouts.app', ['activePage' => 'user.reuniao.index'])
+@extends('panel.layouts.app', ['activePage' => 'user.ocorrencia.index'])
 @section('title', 'Nova reunião')
 
 @section('content')

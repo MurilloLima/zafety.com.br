@@ -1,4 +1,4 @@
-@extends('panel.admin.layouts.app' , ['activePage' => 'agenda.index'])
+@extends('panel.admin.layouts.app' , ['activePage' => 'user.ocorrencia.index'])
 @section('title', 'Editar agendamento')
 
 @section('content')

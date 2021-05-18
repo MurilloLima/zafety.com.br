@@ -23,7 +23,7 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-md-3 col-sm-6 col-12">
+                <div class="col-md-4 col-sm-6 col-12">
                     <a href="{{ route('user.emergencia.create') }}">
                         <div class="info-box bg-danger">
                             <span class="info-box-icon"><i class="fa fa-tools"></i></span>
@@ -35,7 +35,7 @@
                         <!-- /.info-box -->
                     </a>
                 </div>
-                <div class="col-md-3 col-sm-6 col-12">
+                <div class="col-md-4 col-sm-6 col-12">
                     <a href="{{ route('user.emergencias.relatorio') }}">
                         <div class="info-box bg-danger">
                             <span class="info-box-icon"><i class="fas fa-users"></i></span>
@@ -47,7 +47,7 @@
                     </a>
                     <!-- /.info-box -->
                 </div>
-                <div class="col-md-3 col-sm-6 col-12">
+                <div class="col-md-4 col-sm-6 col-12">
                     <a href="{{ route('user.emergencias.search') }}">
                         <div class="info-box bg-danger">
                             <span class="info-box-icon"><i class="fa fa-search"></i></span>
