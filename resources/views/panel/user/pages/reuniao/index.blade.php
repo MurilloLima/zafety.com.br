@@ -27,9 +27,9 @@
                     @include('panel.includes.alerts')
                     <div class="row">
                         <div class="col-md-12 text-right" style="margin-bottom: 10px;">
-                            <a href="{{ route('user.reuniao.create') }}" class="btn btn-default">
+                            <button data-toggle="modal" data-target="#addReuniao" type="button" class="btn btn-default">
                                 Adicionar
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <div class="card card-info">
@@ -42,7 +42,7 @@
                     </div>
                     @forelse ($data as $item)
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header" data-toggle="modal" data-target="#addRelatorio" style="cursor: pointer">
                             <div class="row">
                                 <div class="col-md-4">
                                     {{$item->code}}
@@ -55,6 +55,33 @@
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+                    {{-- modal relatorio --}}
+                    <div class="modal fade" id="addRelatorio" tabindex="-2" role="dialog" aria-labelledby="addRelatorio"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header justify-content-lg-between">
+                                    <h5 class="modal-title">
+                                        Relatório
+                                    </h5>
+                                    <h5 class="modal-title" id="editQuarto">
+                                        {{$item->code}}
+                                    </h5>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="modal-body">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">Fechar</button>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     @empty
@@ -74,6 +101,32 @@
                 <div class="col-md-12">
                     {!!$data->links()!!}
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- modal add --}}
+<div class="modal fade" id="addReuniao" tabindex="-2" role="dialog" aria-labelledby="addReuniao" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="editQuarto">
+                    Novo registro
+                </h5>
+            </div>
+            <div class="modal-body">
+                <form action="" class="navbar-form" method="post">
+                    @csrf
+                    @method('post')
+                    <div class="modal-body">
+                        @include('panel.user.pages.reuniao._form.form')
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-default">Adicionar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
