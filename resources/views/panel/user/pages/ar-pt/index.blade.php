@@ -22,7 +22,7 @@
     {{-- end content-header --}}
     <div class="content">
         <div class="container-fluid">
-            <div class="row justify-content-center">
+            <div class="row">
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="{{ route('user.ar-pt.analise_risco') }}">
                         <div class="info-box bg-orange">
@@ -72,7 +72,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row">
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="{{ route('user.ar-pt.icamento') }}">
                         <div class="info-box bg-orange">
