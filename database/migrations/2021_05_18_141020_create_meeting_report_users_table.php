@@ -15,6 +15,8 @@ class CreateMeetingReportUsersTable extends Migration
     {
         Schema::create('meeting_report_users', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->integer('meeting_report_id');
             $table->timestamps();
         });
     }

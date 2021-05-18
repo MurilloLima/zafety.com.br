@@ -15,6 +15,8 @@ class CreateMeetingReportExtenalParticipantsTable extends Migration
     {
         Schema::create('meeting_report_extenal_participants', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('external_participant_id');
+            $table->integer('meeting_report_id');
             $table->timestamps();
         });
     }

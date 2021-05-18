@@ -10,7 +10,7 @@ user: zafetyapp1
 pass: K4rpWZUR(zep#K
 
 MYSQL
-host:
-bd: zafety
-user: 
-pass: K4rpWZUR(zep#K
+host: https://auth-db484.hostinger.com.br/index.php
+bd: u186288921_zafety
+user: u186288921_zafety
+pass: :jZlc|qV6

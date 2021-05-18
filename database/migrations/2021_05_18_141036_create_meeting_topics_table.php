@@ -15,6 +15,9 @@ class CreateMeetingTopicsTable extends Migration
     {
         Schema::create('meeting_topics', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('meeting_report_id');
+            $table->string('name');
+            $table->text('text');
             $table->timestamps();
         });
     }

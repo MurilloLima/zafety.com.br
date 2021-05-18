@@ -15,6 +15,8 @@ class CreateMeetingConfirmationsTable extends Migration
     {
         Schema::create('meeting_confirmations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('meeting_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

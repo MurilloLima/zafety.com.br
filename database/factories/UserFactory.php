@@ -25,6 +25,6 @@ $factory->define(User::class, function (Faker $faker) {
         'password_hash' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'user_avatar_id' => 128,
         'recovery_token' => Str::random(6),
-        'expired_token' => Str::random(10),
+        'expired_token' => $faker->date(),
     ];
 });

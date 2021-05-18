@@ -40,14 +40,15 @@
                             {!! Form::close() !!}
                         </div>
                     </div>
+                    @forelse ($data as $item)
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-4">
-                                    ATA 035/2021
+                                    {{$item->code}}
                                 </div>
                                 <div class="col-md-4">
-                                    21/02/2021 13:53
+                                    {{$item->date_time}}
                                 </div>
                                 <div class="col-md-4 text-right">
                                     <i class="fas fa-angle-right"></i>
@@ -56,40 +57,23 @@
 
                         </div>
                     </div>
+                    @empty
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                                <div class="col-md-4">
-                                    ATA 035/2021
-                                </div>
-                                <div class="col-md-4">
-                                    21/02/2021 13:53
-                                </div>
-                                <div class="col-md-4 text-right">
-                                    <i class="fas fa-angle-right"></i>
+                                <div class="col-md-12 text-center">
+                                    <span>Nenhum registro!</span>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    ATA 035/2021
-                                </div>
-                                <div class="col-md-4">
-                                    21/02/2021 13:53
-                                </div>
-                                <div class="col-md-4 text-right">
-                                    <i class="fas fa-angle-right"></i>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    @endforelse
                 </div>
-
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {!!$data->links()!!}
+                </div>
             </div>
         </div>
     </div>

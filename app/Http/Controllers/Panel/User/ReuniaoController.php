@@ -16,7 +16,7 @@ class ReuniaoController extends Controller
      */
     public function index()
     {
-        $data = Meeting_report::orderby('created_at', 'desc')->paginate(50);
+        $data = Meeting_report::orderby('created_at', 'desc')->paginate(20);
         return view('panel.user.pages.reuniao.index', compact('data'));
     }
 
