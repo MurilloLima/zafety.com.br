@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Meeting_report;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -36,6 +37,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function meetings()
+    {
+        return $this->hasMany(Meeting_report::class, 'owner_id', 'id');
+    }
 
     public function getAuthPassword(){  
         return $this->password_hash;

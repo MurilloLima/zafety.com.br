@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dashboard</h1>
+                    <h1 class="m-0 text-dark">ATA Reunião</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -42,7 +42,8 @@
                     </div>
                     @forelse ($data as $item)
                     <div class="card">
-                        <div class="card-header" data-toggle="modal" data-target="#addRelatorio" style="cursor: pointer">
+                        <div class="card-header" data-toggle="modal" data-target="#addRelatorio{{$item->id}}"
+                            style="cursor: pointer">
                             <div class="row">
                                 <div class="col-md-4">
                                     {{$item->code}}
@@ -58,8 +59,8 @@
                         </div>
                     </div>
                     {{-- modal relatorio --}}
-                    <div class="modal fade" id="addRelatorio" tabindex="-2" role="dialog" aria-labelledby="addRelatorio"
-                        aria-hidden="true">
+                    <div class="modal fade" id="addRelatorio{{$item->id}}" tabindex="-2" role="dialog"
+                        aria-labelledby="addRelatorio{{$item->id}}" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header justify-content-lg-between">
@@ -71,16 +72,20 @@
                                     </h5>
                                 </div>
                                 <div class="modal-body">
-
-                                    <div class="modal-body">
-
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="">Empresa</label>
+                                            {{-- <p>{{$item->company->name}}</p> --}}
+                                        </div>
+                                         <div class="col-md-6">
+                                            
+                                        </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default"
-                                            data-dismiss="modal">Fechar</button>
-                                    </div>
-
                                 </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -116,7 +121,7 @@
                 </h5>
             </div>
             <div class="modal-body">
-                <form action="" class="navbar-form" method="post">
+                <form action="{{ route('user.reuniao.store') }}" class="navbar-form" method="post">
                     @csrf
                     @method('post')
                     <div class="modal-body">
