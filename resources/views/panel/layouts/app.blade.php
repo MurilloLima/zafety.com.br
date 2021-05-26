@@ -30,6 +30,26 @@
             background: url('{{url('assets/admin/dist/img/4.gif')}}') 50% 50% no-repeat white;
         }
     </style>
+
+    {{-- script add inputs--}}
+    <!-- jQuery -->
+    <script src="{{ asset('assets/admin/plugins/jquery/jQuery-2.1.4.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+    
+        var input = '<div class="row"><div class="col-md-12"><label>Topico</label><div class="input-group input-group-btn"><input type="text" name="topico[]" class="form-control"><span class="input-group-append"><a href="#" class="remove btn btn-danger btn-flat"><i class="fas fa-trash-alt"></i></a></span></div></div></div><div class="row"><div class="col-md-12"><label>Reunião</label><div class="form-group"><textarea name="text[]" class="form-control" rows="5">{{old('text')}}</textarea></div></div></div>';
+    
+        $("button[name='add']").click(function(e){
+            $('#inputs_adicionais').append(input);
+        });
+    
+        $('#inputs_adicionais').delegate('a','click',function(e){
+            e.preventDefault();
+            $(this).parent('div').remove();
+        });
+    
+    });
+    </script>
 </head>
 
 <body class="sidebar-mini control-sidebar-slide-open accent-navy">
@@ -41,8 +61,7 @@
     </div>
 
     <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="{{ asset('assets/admin/plugins/jquery/jQuery-2.1.4.min.js') }}"></script>
+
     <!-- Bootstrap -->
     <script src="{{ asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- overlayScrollbars -->
@@ -130,6 +149,7 @@
       });
     })
     </script>
+
 </body>
 
 </html>

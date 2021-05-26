@@ -69,6 +69,7 @@ class ReuniaoController extends Controller
      */
     public function store(Request $request, Meeting_report $meeting)
     {
+        dd($request->all());
         $time =  $request->get('time');
         $date =  $request->get('date');
         $myDateTime = DateTime::createFromFormat('d/m/Y', $date);
