@@ -29,7 +29,6 @@
             z-index: 9999;
             background: url('{{url('assets/admin/dist/img/4.gif')}}') 50% 50% no-repeat white;
         }
-
     </style>
 </head>
 

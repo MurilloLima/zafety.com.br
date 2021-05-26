@@ -33,13 +33,14 @@ class Meeting_report extends Model
         return $this->belongsTo(Sector::class, 'sector_id', 'id');
     }
 
-    public function participantes()
-    {
-        return $this->hasMany(Meeting_report_extenal_participant::class, 'meeting_report_id', 'id');
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class, 'owner_id', 'id');
+    }
+
+    // relacionamento many to many participantes
+    public function participantes()
+    {
+        return $this->belongsToMany(External_participants::class, 'meeting_report_extenal_participants', 'external_participant_id');
     }
 }

@@ -36,17 +36,17 @@ class ReuniaoController extends Controller
         $role = Role::where('id', $role_users->role_id)->first();
         //pega a empresa
         $company = Company::where('id', $role->company_id)->first();
-       
+
         //pega areas
-        $areas = $company->areas->pluck('name','id');
+        $areas = $company->areas->pluck('name', 'id');
         //pega setores
-        $setores = $company->setores->pluck('name','id');
+        $setores = $company->setores->pluck('name', 'id');
 
         //pega temas
-        $temas = $company->themas->pluck('name','id');
+        $temas = $company->themas->pluck('name', 'id');
 
         //pega reunioes
-        $reunioes = $company->reunioes()->paginate();
+        $reunioes = $company->reunioes()->paginate(30);
 
         return view('panel.user.pages.reuniao.index', compact('reunioes', 'areas', 'setores', 'temas', 'date', 'time', 'company'));
     }

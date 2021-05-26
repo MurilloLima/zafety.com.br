@@ -87,9 +87,9 @@
                                                             <dt>Tema</dt>
                                                             <dd>{{$item->area->name}}</dd>
                                                             <dt>Data</dt>
-                                                            <dd>{{$item->area->name}}</dd>
+                                                            <dd>{{date('d/m/Y', strtotime($item->date_time))}}</dd>
                                                             <dt>Horário</dt>
-                                                            <dd>{{$item->area->name}}</dd>
+                                                            <dd>{{date('H:i:s', strtotime($item->date_time))}}</dd>
                                                         </dl>
                                                     </div>
                                                     <div class="col-md-6">
@@ -103,9 +103,12 @@
                                                             <dt>Reunião</dt>
                                                             <dd>{{$item->setor->name}}</dd>
                                                             {{-- fim area repetitiva --}}
-                                                            
+
                                                             <dt>Participantes</dt>
-                                                            <dd>{{$item->area->name}}</dd>
+                                                            {{-- @foreach ($item->participantes as $p) --}}
+                                                            {{-- <dd>{{$p->name}}</dd> --}}
+                                                            {{-- @endforeach --}}
+
 
                                                             <dt>Emitido por</dt>
                                                             <dd>{{$item->user->name}}</dd>
