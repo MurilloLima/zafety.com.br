@@ -34,13 +34,11 @@ class ReuniaoController extends Controller
 
         //pega o role
         $role = Role::where('id', $role_users->role_id)->first();
-
         //pega a empresa
         $company = Company::where('id', $role->company_id)->first();
-
+       
         //pega areas
         $areas = $company->areas->pluck('name','id');
-
         //pega setores
         $setores = $company->setores->pluck('name','id');
 
