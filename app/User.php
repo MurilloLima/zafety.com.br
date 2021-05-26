@@ -2,7 +2,9 @@
 
 namespace App;
 
+use App\Models\File;
 use App\Models\Meeting_report;
+use App\Models\Role_user;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -40,10 +42,21 @@ class User extends Authenticatable
 
     public function meetings()
     {
-        return $this->hasMany(Meeting_report::class, 'owner_id', 'id');
+        return $this->hasMany(Meeting_report::class, 'owner_id');
     }
 
-    public function getAuthPassword(){  
+    public function roles()
+    {
+        return $this->hasMany(Role_user::class, 'user_id', 'id');
+    }
+
+    public function file()
+    {
+        return $this->belongsTo(File::class, 'id');
+    }
+
+    public function getAuthPassword()
+    {
         return $this->password_hash;
     }
 }

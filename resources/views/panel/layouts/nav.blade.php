@@ -39,7 +39,7 @@
 <aside class="main-sidebar elevation-4 {{$class}}">
     <!-- Brand Logo -->
     <a href="{{ route('admin.index') }}" class="brand-link">
-        <img src="{{ asset('icon.png') }}" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ asset('icon.png') }}" alt="" class="brand-image" style="opacity: .8">
         <span class="brand-text font-weight-light">Zafety</span>
     </a>
 
@@ -48,7 +48,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('assets/admin/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                <img src="{{ asset('assets/admin/dist/img/user2-160x160.jpg') }}" class="img-circle"
                     alt="User Image">
             </div>
             <div class="info">

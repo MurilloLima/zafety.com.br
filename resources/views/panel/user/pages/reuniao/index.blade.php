@@ -40,71 +40,78 @@
                             {!! Form::close() !!}
                         </div>
                     </div>
-                    @forelse ($data as $item)
-                    <div class="card">
-                        <div class="card-header" data-toggle="modal" data-target="#addRelatorio{{$item->id}}"
-                            style="cursor: pointer">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    {{$item->code}}
-                                </div>
-                                <div class="col-md-4">
-                                    {{$item->date_time}}
-                                </div>
-                                <div class="col-md-4 text-right">
-                                    <i class="fas fa-angle-right"></i>
-                                </div>
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between">
+                                <h3 class="card-title">ATA Reunião</h3>
                             </div>
-
                         </div>
-                    </div>
-                    {{-- modal relatorio --}}
-                    <div class="modal fade" id="addRelatorio{{$item->id}}" tabindex="-2" role="dialog"
-                        aria-labelledby="addRelatorio{{$item->id}}" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header justify-content-lg-between">
-                                    <h5 class="modal-title">
-                                        Relatório
-                                    </h5>
-                                    <h5 class="modal-title" id="editQuarto">
+                        <div class="card-body">
+                            @forelse ($reunioes as $item)
+                            <div class="card-header" data-toggle="modal" data-target="#addRelatorio{{$item->id}}"
+                                style="cursor: pointer">
+                                <div class="row">
+                                    <div class="col-md-4">
                                         {{$item->code}}
-                                    </h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        {{$item->date_time}}
+                                    </div>
+                                    <div class="col-md-4 text-right">
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label for="">Empresa</label>
-                                            {{-- <p>{{$item->company->name}}</p> --}}
-                                        </div>
-                                         <div class="col-md-6">
-                                            
+                                {{-- modal relatorio --}}
+                                <div class="modal fade" id="addRelatorio{{$item->id}}" tabindex="-2" role="dialog"
+                                    aria-labelledby="addRelatorio{{$item->id}}" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header justify-content-lg-between">
+                                                <h5 class="modal-title">
+                                                    Relatório
+                                                </h5>
+                                                <h5 class="modal-title" id="editQuarto">
+                                                    {{$item->code}}
+                                                </h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label for="">Empresa</label>
+                                                        {{-- <p>{{$item->company->name}}</p> --}}
+                                                    </div>
+                                                    <div class="col-md-6">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Fechar</button>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                                </div>
-
                             </div>
-                        </div>
-                    </div>
-                    @empty
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <span>Nenhum registro!</span>
+                            @empty
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <span>Nenhum registro!</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            @endforelse
                         </div>
                     </div>
-                    @endforelse
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    {!!$data->links()!!}
+                    {!!$reunioes->links()!!}
                 </div>
             </div>
         </div>

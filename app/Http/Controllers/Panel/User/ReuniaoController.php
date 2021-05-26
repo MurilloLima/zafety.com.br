@@ -5,8 +5,12 @@ namespace App\Http\Controllers\Panel\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Area;
+use App\Models\Company;
+use App\Models\File;
 use App\Models\Meeting;
 use App\Models\Meeting_report;
+use App\Models\Role;
+use App\Models\Role_user;
 use App\Models\Sector;
 use App\Models\Theme;
 use App\User;
@@ -20,16 +24,33 @@ class ReuniaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Area $area, Sector $sector, Theme $theme, Meeting_report $meeting)
+    public function index(User $user, Meeting_report $meeting)
     {
         $date = date('d/m/Y');
         $time = date('H:i:s');
 
-        $areas = $area->pluck('name', 'id');
-        $sectors = $sector->pluck('name', 'id');
-        $themes = $theme->pluck('name', 'id');
-        $data = $meeting->where('owner_id', auth()->user()->id)->orderby('created_at', 'desc')->paginate(30);
-        return view('panel.user.pages.reuniao.index', compact('data', 'areas', 'sectors', 'themes', 'date', 'time'));
+        //pega role user
+        $role_users = Role_user::where('user_id', auth()->user()->id)->first();
+
+        //pega o role
+        $role = Role::where('id', $role_users->role_id)->first();
+
+        //pega a empresa
+        $company = Company::where('id', $role->company_id)->first();
+
+        //pega areas
+        $areas = $company->areas->pluck('name','id');
+
+        //pega setores
+        $setores = $company->setores->pluck('name','id');
+
+        //pega temas
+        $temas = $company->themas->pluck('name','id');
+
+        //pega reunioes
+        $reunioes = $company->reunioes()->paginate();
+
+        return view('panel.user.pages.reuniao.index', compact('reunioes', 'areas', 'setores', 'temas', 'date', 'time'));
     }
 
     /**

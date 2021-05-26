@@ -8,7 +8,7 @@
     <div class="col-md-4">
         <label>{{ __('Setor') }}</label>
         <div class="form-group{{ $errors->has('setor') ? ' has-danger' : '' }}">
-            {!! Form::select('sector_id', $sectors, NULL, ['class'=>'form-control']) !!}
+            {!! Form::select('sector_id', $setores, NULL, ['class'=>'form-control']) !!}
             @if ($errors->has('setor'))
             <span id="email-error" class="error text-danger">{{ $errors->first('setor') }}</span>
             @endif

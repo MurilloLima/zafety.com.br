@@ -3,7 +3,6 @@
         <label>{{ __('Área') }}</label>
         <div class="form-group{{ $errors->has('area') ? ' has-danger' : '' }}">
             {!! Form::select('area_id', $areas, NULL, ['class'=>'form-control']) !!}
-
             @if ($errors->has('area'))
             <span id="area-error" class="error text-danger">{{ $errors->first('area') }}</span>
             @endif
@@ -12,7 +11,7 @@
     <div class="col-md-6">
         <label>{{ __('Setor') }}</label>
         <div class="form-group{{ $errors->has('setor') ? ' has-danger' : '' }}">
-            {!! Form::select('sector_id', $sectors, NULL, ['class'=>'form-control']) !!}
+            {!! Form::select('sector_id', $setores, NULL, ['class'=>'form-control']) !!}
             @if ($errors->has('setor'))
             <span id="email-error" class="error text-danger">{{ $errors->first('setor') }}</span>
             @endif
@@ -24,8 +23,7 @@
     <div class="col-md-6">
         <label>{{ __('Tema') }}</label>
         <div class="form-group{{ $errors->has('tema') ? ' has-danger' : '' }}">
-            {!! Form::select('theme_id', $themes, NULL, ['class'=>'form-control']) !!}
-
+            {!! Form::select('theme_id', $temas, NULL, ['class'=>'form-control']) !!}
             @if ($errors->has('tema'))
             <span id="tema-error" class="error text-danger">{{ $errors->first('tema') }}</span>
             @endif
@@ -46,7 +44,7 @@
         <label>{{ __('Horário') }}</label>
         <div class="form-group{{ $errors->has('time') ? ' has-danger' : '' }}">
             <input class="form-control time{{ $errors->has('time') ? ' has-danger' : '' }}" name="time"
-                type="datetime-local" value="{{$time}}" required />
+                type="text" value="{{$time}}" required />
             @if ($errors->has('time'))
             <span id="email-error" class="error text-danger">{{ $errors->first('time') }}</span>
             @endif
