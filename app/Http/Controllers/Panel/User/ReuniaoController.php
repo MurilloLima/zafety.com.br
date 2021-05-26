@@ -48,7 +48,7 @@ class ReuniaoController extends Controller
         //pega reunioes
         $reunioes = $company->reunioes()->paginate();
 
-        return view('panel.user.pages.reuniao.index', compact('reunioes', 'areas', 'setores', 'temas', 'date', 'time'));
+        return view('panel.user.pages.reuniao.index', compact('reunioes', 'areas', 'setores', 'temas', 'date', 'time', 'company'));
     }
 
     /**
@@ -85,7 +85,7 @@ class ReuniaoController extends Controller
             'theme_id' => $request->get('theme_id'),
             'area_id' => $request->get('area_id'),
             'sector_id' => $request->get('sector_id'),
-            // 'company_id' => ,
+            'company_id' => $request->get('company_id'),
 
         ]);
         return redirect()->back()->with('success', 'Registro cadastrado com sucesso!');

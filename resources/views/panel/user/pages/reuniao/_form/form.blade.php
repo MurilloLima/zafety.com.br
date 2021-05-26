@@ -1,3 +1,4 @@
+<input type="hidden" name="company_id" value="{{$company->id}}">
 <div class="row">
     <div class="col-md-6">
         <label>{{ __('Área') }}</label>
@@ -43,8 +44,8 @@
     <div class="col-md-3">
         <label>{{ __('Horário') }}</label>
         <div class="form-group{{ $errors->has('time') ? ' has-danger' : '' }}">
-            <input class="form-control time{{ $errors->has('time') ? ' has-danger' : '' }}" name="time"
-                type="text" value="{{$time}}" required />
+            <input class="form-control time{{ $errors->has('time') ? ' has-danger' : '' }}" name="time" type="text"
+                value="{{$time}}" required />
             @if ($errors->has('time'))
             <span id="email-error" class="error text-danger">{{ $errors->first('time') }}</span>
             @endif
@@ -66,9 +67,11 @@
 <div class="row">
     <div class="col-md-12">
         <label>{{ __('Topico') }}</label>
-        <div class="form-group{{ $errors->has('topico') ? ' has-danger' : '' }}">
-            <input class="form-control{{ $errors->has('topico') ? ' has-danger' : '' }}" name="topico" type="text"
-                value="{{$data->topico ?? old('date')}}" required />
+        <div class="input-group input-group-btn {{ $errors->has('topico') ? ' has-danger' : '' }}">
+            <input type="text" name="topico[]" class="form-control{{ $errors->has('topico') ? ' has-danger' : '' }}">
+            <span class="input-group-append">
+                <button type="button" class="btn btn-info btn-flat"><i class="fa fa-plus"></i></button>
+            </span>
             @if ($errors->has('topico'))
             <span id="email-error" class="error text-danger">{{ $errors->first('topico') }}</span>
             @endif

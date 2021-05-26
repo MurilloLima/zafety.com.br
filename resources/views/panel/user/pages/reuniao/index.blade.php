@@ -77,11 +77,39 @@
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <label for="">Empresa</label>
-                                                        {{-- <p>{{$item->company->name}}</p> --}}
+                                                        <dl>
+                                                            <dt>Empresa</dt>
+                                                            <dd>{{$item->company->name}}</dd>
+                                                            <dt>Area</dt>
+                                                            <dd>{{$item->area->name}}</dd>
+                                                            <dt>Setor</dt>
+                                                            <dd>{{$item->setor->name}}</dd>
+                                                            <dt>Tema</dt>
+                                                            <dd>{{$item->area->name}}</dd>
+                                                            <dt>Data</dt>
+                                                            <dd>{{$item->area->name}}</dd>
+                                                            <dt>Horário</dt>
+                                                            <dd>{{$item->area->name}}</dd>
+                                                        </dl>
                                                     </div>
                                                     <div class="col-md-6">
+                                                        <dl>
+                                                            <dt>Assunto</dt>
+                                                            <dd>{{$item->subject}}</dd>
 
+                                                            {{-- topicos repetitiva --}}
+                                                            <dt>Tópico</dt>
+                                                            <dd>{{$item->area->name}}</dd>
+                                                            <dt>Reunião</dt>
+                                                            <dd>{{$item->setor->name}}</dd>
+                                                            {{-- fim area repetitiva --}}
+                                                            
+                                                            <dt>Participantes</dt>
+                                                            <dd>{{$item->area->name}}</dd>
+
+                                                            <dt>Emitido por</dt>
+                                                            <dd>{{$item->user->name}}</dd>
+                                                        </dl>
                                                     </div>
                                                 </div>
                                             </div>
