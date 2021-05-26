@@ -11,7 +11,7 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-bell"></i>
                 <span class="badge badge-warning navbar-badge">15</span>
@@ -26,7 +26,7 @@
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">Visualizar todas</a>
             </div>
-        </li>
+        </li> --}}
         <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
                     class="fas fa-th-large"></i></a>
@@ -37,25 +37,19 @@
 
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar elevation-4 {{$class}}">
-    <!-- Brand Logo -->
-    <a href="{{ route('admin.index') }}" class="brand-link">
-        <img src="{{ asset('icon.png') }}" alt="" class="brand-image" style="opacity: .8">
-        <span class="brand-text font-weight-light">Zafety</span>
-    </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="mt-3 pb-3 mb-3 text-center">
             <div class="image">
-                <img src="{{ asset('assets/admin/dist/img/user2-160x160.jpg') }}" class="img-circle"
+                <img src="{{ asset('assets/admin/dist/img/user2-160x160.jpg') }}" width="120" class="img-circle elevation-1"
                     alt="User Image">
             </div>
-            <div class="info">
+
+            <div class="info text-center">
                 <a href="#" class="d-block">{{auth()->user()->name}}</a>
             </div>
         </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-child-indent" data-widget="treeview"
@@ -158,6 +152,10 @@
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
+
+        <div class="text-center" style="margin-top: 5rem">
+            <img src="{{ asset('logo.png') }}" width="120" alt="">
+        </div>
     </div>
     <!-- /.sidebar -->
 </aside>

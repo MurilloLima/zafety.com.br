@@ -23,7 +23,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-6">
                     <a href="{{ route('user.hse.index') }}">
                         <div class="info-box">
                             <span class="info-box-icon bg-success elevation-1 p-2">
@@ -40,7 +40,7 @@
                     <!-- /.info-box -->
                 </div>
                 <!-- /.col -->
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-6">
                     <a href="{{ route('user.rh.index') }}">
                         <div class="info-box mb-6">
                             <span class="info-box-icon bg-danger elevation-1 p-2">
@@ -57,7 +57,7 @@
                 <!-- /.col -->
 
                 <!-- fix for small devices only -->
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-6">
                     <a href="{{ route('user.qualidade.index') }}">
                         <div class="info-box mb-6">
                             <span class="info-box-icon bg-orange elevation-1 p-2">
@@ -74,7 +74,7 @@
                     <!-- /.info-box -->
                 </div>
                 <!-- /.col -->
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-6">
                     <a href="{{ route('user.producao.index') }}">
                         <div class="info-box mb-6">
                             <span class="info-box-icon bg-info elevation-1 p-2">
@@ -92,7 +92,7 @@
                 </div>
                 <!-- /.col -->
             </div>
-            <hr>
+            {{-- <hr>
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-3">
                     <a href="{{ route('user.reuniao.index') }}">
@@ -238,7 +238,7 @@
                     
                 </div>
                 <!-- /.col -->
-            </div>
+            </div> --}}
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
