@@ -34,7 +34,7 @@
                     </div>
                     <div class="card card-info">
                         <div class="card-body">
-                            {!! Form::open(['route'=>'user.reuniao.search']) !!}
+                            {!! Form::open(['route'=>'user.reuniao.search', 'method' => 'GET']) !!}
                             @include('panel.user.pages.reuniao._form.search')
                             <button class="btn btn-default"><i class="fa fa-search"></i> Pesquisar</button>
                             {!! Form::close() !!}

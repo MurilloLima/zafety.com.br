@@ -69,9 +69,10 @@ class ReuniaoController extends Controller
      */
     public function store(Request $request, Meeting_report $meeting)
     {
+        dd($request->all());
         $topicos = $request->get('topico');
         $text = $request->get('text');
-        
+
 
         // DB::table('extra')->insert($dataSet);
 
@@ -104,9 +105,32 @@ class ReuniaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function search(Request $req)
     {
-        //
+        $palavra_chave = $req->get('palavra_chave');
+        
+        $date = date('d/m/Y');
+        $time = date('H:i:s');
+
+        //pega role user
+        $role_users = Role_user::where('user_id', auth()->user()->id)->first();
+
+        //pega o role
+        $role = Role::where('id', $role_users->role_id)->first();
+        //pega a empresa
+        $company = Company::where('id', $role->company_id)->first();
+
+        //pega areas
+        $areas = $company->areas->pluck('name', 'id');
+        //pega setores
+        $setores = $company->setores->pluck('name', 'id');
+
+        //pega temas
+        $temas = $company->themas->pluck('name', 'id');
+
+        //pega reunioes
+        $reunioes = $company->reunioes()->where('subject', 'LIKE', '%' . $palavra_chave . '%')->paginate(30);
+        return view('panel.user.pages.reuniao.index', compact('reunioes', 'areas', 'setores', 'temas', 'date', 'time', 'company'));
     }
 
     /**

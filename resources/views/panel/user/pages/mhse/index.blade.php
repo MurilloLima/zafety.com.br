@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dashboard</h1>
+                    <h1 class="m-0 text-dark">Minuto HSE</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -27,74 +27,149 @@
                     @include('panel.includes.alerts')
                     <div class="row">
                         <div class="col-md-12 text-right" style="margin-bottom: 10px;">
-                            <a href="{{ route('user.minuto-hse.create') }}" class="btn btn-default">
+                            <button data-toggle="modal" data-target="#addReuniao" type="button" class="btn btn-default">
                                 Adicionar
-                            </a>
+                            </button>
                         </div>
                     </div>
-                    <div class="card card-info">
+                    <div class="card card-success">
                         <div class="card-body">
-                            {!! Form::open(['route'=>'user.reuniao.search']) !!}
+                            {!! Form::open(['route'=>'user.reuniao.search', 'method' => 'GET']) !!}
                             @include('panel.user.pages.mhse._form.search')
                             <button class="btn btn-default"><i class="fa fa-search"></i> Pesquisar</button>
                             {!! Form::close() !!}
                         </div>
                     </div>
                     <div class="card card-success">
-                        <div class="card-header border-0">
+                        <div class="card-header">
                             <div class="d-flex justify-content-between">
                                 <h3 class="card-title">Minuto HSE</h3>
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nome</th>
-                                            <th>Telefone</th>
-                                            <th>status</th>
-                                            <th>Data</th>
-                                            <th>Horário</th>
-                                            <th>#</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @forelse ($data as $item)
-                                        <tr>
-                                            <td><a href="">{{$item->id}}</a></td>
-                                            <td>{{$item->name}}</td>
-                                            <td>{{$item->phone}}</td>
-                                            <td>{{$item->status}}</td>
-                                            <td>{{$item->date}}</td>
-                                            <td>{{$item->hours}}</td>
-                                            <td>
-                                                <a href="{{ route('agenda.edit', ['id'=>$item->id]) }}"
-                                                    class="btn btn-xs btn-default" title="Editar">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <a href="{{ route('agenda.destroy', ['id'=>$item->id]) }}"
-                                                    class="btn btn-xs btn-default" title="Deletar">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="7" class="text-center">Nenhum cadastrada no momento!</td>
-                                        </tr>
-                                        @endforelse
-                                    </tbody>
-                                </table>
-                                <div class="d-flex flex-row justify-content-end">
-                                    {{-- {{ $data->links() }} --}}
+                            @forelse ($reunioes as $item)
+                            <div class="card-header" data-toggle="modal" data-target="#addRelatorio{{$item->id}}"
+                                style="cursor: pointer">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        {{$item->code}}
+                                    </div>
+                                    <div class="col-md-4">
+                                        {{$item->date_time}}
+                                    </div>
+                                    <div class="col-md-4 text-right">
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                </div>
+                                {{-- modal relatorio --}}
+                                <div class="modal fade" id="addRelatorio{{$item->id}}" tabindex="-2" role="dialog"
+                                    aria-labelledby="addRelatorio{{$item->id}}" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header justify-content-lg-between">
+                                                <h5 class="modal-title">
+                                                    Relatório
+                                                </h5>
+                                                <h5 class="modal-title" id="editQuarto">
+                                                    {{$item->code}}
+                                                </h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <dl>
+                                                            <dt>Empresa</dt>
+                                                            <dd>{{$item->company->name}}</dd>
+                                                            <dt>Area</dt>
+                                                            <dd>{{$item->area->name}}</dd>
+                                                            <dt>Setor</dt>
+                                                            <dd>{{$item->setor->name}}</dd>
+                                                            <dt>Tema</dt>
+                                                            <dd>{{$item->area->name}}</dd>
+                                                            <dt>Data</dt>
+                                                            <dd>{{date('d/m/Y', strtotime($item->date_time))}}</dd>
+                                                            <dt>Horário</dt>
+                                                            <dd>{{date('H:i:s', strtotime($item->date_time))}}</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <dl>
+                                                            <dt>Assunto</dt>
+                                                            <dd>{{$item->subject}}</dd>
+
+                                                            {{-- topicos repetitiva --}}
+                                                            <dt>Tópico</dt>
+                                                            <dd>{{$item->area->name}}</dd>
+                                                            <dt>Reunião</dt>
+                                                            <dd>{{$item->setor->name}}</dd>
+                                                            {{-- fim area repetitiva --}}
+
+                                                            <dt>Participantes</dt>
+                                                            {{-- @foreach ($item->participantes as $p) --}}
+                                                            {{-- <dd>{{$p->name}}</dd> --}}
+                                                            {{-- @endforeach --}}
+
+
+                                                            <dt>Emitido por</dt>
+                                                            <dd>{{$item->user->name}}</dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Fechar</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            @empty
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <span>Nenhum registro!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforelse
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {!!$reunioes->links()!!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+{{-- modal add --}}
+<div class="modal fade" id="addReuniao" tabindex="-2" role="dialog" aria-labelledby="addReuniao" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="editQuarto">
+                    Novo registro
+                </h5>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('user.reuniao.store') }}" class="navbar-form" method="post">
+                    @csrf
+                    @method('post')
+                    <div class="modal-body">
+                        @include('panel.user.pages.mhse._form.form')
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-default">Adicionar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

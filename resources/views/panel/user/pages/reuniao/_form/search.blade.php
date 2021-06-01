@@ -17,8 +17,8 @@
     <div class="col-md-2">
         <label>{{ __('De') }}</label>
         <div class="form-group{{ $errors->has('de') ? ' has-danger' : '' }}">
-            <input class="form-control date{{ $errors->has('de') ? ' has-danger' : '' }}" name="de" type="date"
-                value="{{old('date')}}" required />
+            <input class="form-control date{{ $errors->has('de') ? ' has-danger' : '' }}" name="de" type="text"
+                value="{{old('date')}}" />
             @if ($errors->has('de'))
             <span id="de-error" class="error text-danger">{{ $errors->first('de') }}</span>
             @endif
@@ -27,8 +27,8 @@
     <div class="col-md-2">
         <label>{{ __('Até') }}</label>
         <div class="form-group{{ $errors->has('ate') ? ' has-danger' : '' }}">
-            <input class="form-control date{{ $errors->has('ate') ? ' has-danger' : '' }}" name="ate" type="date"
-                value="{{old('date')}}" required />
+            <input class="form-control date{{ $errors->has('ate') ? ' has-danger' : '' }}" name="ate" type="text"
+                value="{{old('date')}}" />
             @if ($errors->has('ate'))
             <span id="email-error" class="error text-danger">{{ $errors->first('ate') }}</span>
             @endif
@@ -40,7 +40,7 @@
         <label>{{ __('Palavra chave') }}</label>
         <div class="form-group{{ $errors->has('palavra_chave') ? ' has-danger' : '' }}">
             <input class="form-control{{ $errors->has('palavra_chave') ? ' has-danger' : '' }}" name="palavra_chave"
-                type="text" value="{{old('palavra_chave')}}" required />
+                type="text" value="{{old('palavra_chave')}}" />
             @if ($errors->has('palavra_chave'))
             <span id="email-error" class="error text-danger">{{ $errors->first('palavra_chave') }}</span>
             @endif
